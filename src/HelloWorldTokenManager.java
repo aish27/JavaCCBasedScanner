@@ -22,12 +22,14 @@ private static final int jjStopStringLiteralDfa_0(int pos, long active0)
    switch (pos)
    {
       case 0:
-         if ((active0 & 0x3ffffffffffffcL) != 0L)
+         if ((active0 & 0x3fffffffffff78L) != 0L)
+            return 10;
+         if ((active0 & 0x80L) != 0L)
             return 2;
          return -1;
       case 1:
-         if ((active0 & 0x3ffffffffffffcL) != 0L)
-            return 3;
+         if ((active0 & 0x3ffffffffffff8L) != 0L)
+            return 11;
          return -1;
       default :
          return -1;
@@ -51,7 +53,7 @@ static private int jjMoveStringLiteralDfa0_0()
    {
       case 65:
       case 97:
-         return jjMoveStringLiteralDfa1_0(0x84L);
+         return jjMoveStringLiteralDfa1_0(0x80L);
       case 66:
       case 98:
          return jjMoveStringLiteralDfa1_0(0x421000L);
@@ -122,16 +124,13 @@ static private int jjMoveStringLiteralDfa1_0(long active0)
       case 65:
       case 97:
          return jjMoveStringLiteralDfa2_0(active0, 0x100308000020L);
-      case 66:
-      case 98:
-         return jjMoveStringLiteralDfa2_0(active0, 0x4L);
       case 69:
       case 101:
          return jjMoveStringLiteralDfa2_0(active0, 0x2000002000008L);
       case 70:
       case 102:
          if ((active0 & 0x200L) != 0L)
-            return jjStartNfaWithStates_0(1, 9, 3);
+            return jjStartNfaWithStates_0(1, 9, 11);
          break;
       case 72:
       case 104:
@@ -239,7 +238,7 @@ static private int jjMoveStringLiteralDfa2_0(long old0, long active0)
          return jjMoveStringLiteralDfa3_0(active0, 0x10000210000L);
       case 83:
       case 115:
-         return jjMoveStringLiteralDfa3_0(active0, 0x9040084L);
+         return jjMoveStringLiteralDfa3_0(active0, 0x9040080L);
       case 84:
       case 116:
          if ((active0 & 0x20000000L) != 0L)
@@ -350,7 +349,7 @@ static private int jjMoveStringLiteralDfa3_0(long old0, long active0)
          return jjMoveStringLiteralDfa4_0(active0, 0x840200000000L);
       case 84:
       case 116:
-         return jjMoveStringLiteralDfa4_0(active0, 0x14000801008004L);
+         return jjMoveStringLiteralDfa4_0(active0, 0x14000801008000L);
       case 85:
       case 117:
          return jjMoveStringLiteralDfa4_0(active0, 0x2000000L);
@@ -423,7 +422,7 @@ static private int jjMoveStringLiteralDfa4_0(long old0, long active0)
       case 114:
          if ((active0 & 0x200000000000L) != 0L)
             return jjStopAtPos(4, 45);
-         return jjMoveStringLiteralDfa5_0(active0, 0x402080084L);
+         return jjMoveStringLiteralDfa5_0(active0, 0x402080080L);
       case 83:
       case 115:
          if ((active0 & 0x40000000000L) != 0L)
@@ -479,7 +478,7 @@ static private int jjMoveStringLiteralDfa5_0(long old0, long active0)
    {
       case 65:
       case 97:
-         return jjMoveStringLiteralDfa6_0(active0, 0x1004L);
+         return jjMoveStringLiteralDfa6_0(active0, 0x1000L);
       case 67:
       case 99:
          if ((active0 & 0x100000L) != 0L)
@@ -567,7 +566,7 @@ static private int jjMoveStringLiteralDfa6_0(long old0, long active0)
          return jjMoveStringLiteralDfa7_0(active0, 0x400000000L);
       case 67:
       case 99:
-         return jjMoveStringLiteralDfa7_0(active0, 0x1000004L);
+         return jjMoveStringLiteralDfa7_0(active0, 0x1000000L);
       case 69:
       case 101:
          if ((active0 & 0x20L) != 0L)
@@ -649,11 +648,6 @@ static private int jjMoveStringLiteralDfa7_0(long old0, long active0)
       case 112:
          if ((active0 & 0x10000000000L) != 0L)
             return jjStopAtPos(7, 40);
-         break;
-      case 84:
-      case 116:
-         if ((active0 & 0x4L) != 0L)
-            return jjStopAtPos(7, 2);
          break;
       default :
       debugStream.println("   No string literal matches possible.");
@@ -817,7 +811,7 @@ static private int jjStartNfaWithStates_0(int pos, int kind, int state)
 static private int jjMoveNfa_0(int startState, int curPos)
 {
    int startsAt = 0;
-   jjnewStateCnt = 16;
+   jjnewStateCnt = 24;
    int i = 1;
    jjstateSet[0] = startState;
       debugStream.println("   Starting NFA to match one of : " + jjKindsForStateVector(curLexState, jjstateSet, 0, 1));
@@ -839,7 +833,7 @@ static private int jjMoveNfa_0(int startState, int curPos)
                   {
                      if (kind > 55)
                         kind = 55;
-                     jjCheckNAdd(8);
+                     jjCheckNAdd(16);
                   }
                   else if ((0x100100000000L & l) != 0L)
                   {
@@ -850,45 +844,45 @@ static private int jjMoveNfa_0(int startState, int curPos)
                   {
                      if (kind > 56)
                         kind = 56;
-                     jjCheckNAddTwoStates(10, 11);
+                     jjCheckNAddTwoStates(18, 19);
                   }
                   break;
-               case 6:
+               case 14:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
                   if (kind > 54)
                      kind = 54;
                   jjAddStates(0, 1);
                   break;
-               case 7:
+               case 15:
                   if ((0x3fe000000000000L & l) == 0L)
                      break;
                   if (kind > 55)
                      kind = 55;
-                  jjCheckNAdd(8);
+                  jjCheckNAdd(16);
                   break;
-               case 8:
+               case 16:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
                   if (kind > 55)
                      kind = 55;
-                  jjCheckNAdd(8);
+                  jjCheckNAdd(16);
                   break;
-               case 9:
+               case 17:
                   if (curChar != 48)
                      break;
                   if (kind > 56)
                      kind = 56;
-                  jjCheckNAddTwoStates(10, 11);
+                  jjCheckNAddTwoStates(18, 19);
                   break;
-               case 10:
+               case 18:
                   if ((0xff000000000000L & l) == 0L)
                      break;
                   if (kind > 56)
                      kind = 56;
-                  jjCheckNAdd(10);
+                  jjCheckNAdd(18);
                   break;
-               case 12:
+               case 20:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
                   if (kind > 57)
@@ -906,40 +900,80 @@ static private int jjMoveNfa_0(int startState, int curPos)
          {
             switch(jjstateSet[--i])
             {
+               case 2:
+                  if ((0x7fffffe07fffffeL & l) != 0L)
+                     jjCheckNAdd(11);
+                  if ((0x400000004L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 3;
+                  break;
                case 0:
                   if ((0x7fffffe07fffffeL & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 10;
+                  if ((0x200000002L & l) != 0L)
                      jjstateSet[jjnewStateCnt++] = 2;
                   break;
-               case 2:
-               case 5:
-                  if ((0x7fffffe07fffffeL & l) != 0L)
-                     jjCheckNAdd(3);
+               case 1:
+                  if ((0x200000002L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 2;
                   break;
                case 3:
+                  if ((0x8000000080000L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 4;
+                  break;
+               case 4:
+                  if ((0x10000000100000L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 5;
+                  break;
+               case 5:
+                  if ((0x4000000040000L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 6;
+                  break;
+               case 6:
+                  if ((0x200000002L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 7;
+                  break;
+               case 7:
+                  if ((0x800000008L & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 8;
+                  break;
+               case 8:
+                  if ((0x10000000100000L & l) != 0L && kind > 2)
+                     kind = 2;
+                  break;
+               case 9:
+                  if ((0x7fffffe07fffffeL & l) != 0L)
+                     jjstateSet[jjnewStateCnt++] = 10;
+                  break;
+               case 10:
+               case 13:
+                  if ((0x7fffffe07fffffeL & l) != 0L)
+                     jjCheckNAdd(11);
+                  break;
+               case 11:
                   if (curChar != 95)
                      break;
                   kind = 54;
                   jjAddStates(0, 1);
                   break;
-               case 4:
+               case 12:
                   if ((0x7fffffe07fffffeL & l) != 0L)
-                     jjstateSet[jjnewStateCnt++] = 5;
+                     jjstateSet[jjnewStateCnt++] = 13;
                   break;
-               case 11:
+               case 19:
                   if ((0x100000001000000L & l) != 0L)
-                     jjCheckNAddTwoStates(12, 15);
+                     jjCheckNAddTwoStates(20, 23);
                   break;
-               case 13:
-               case 15:
+               case 21:
+               case 23:
                   if ((0x7e0000007eL & l) != 0L)
-                     jjCheckNAdd(14);
+                     jjCheckNAdd(22);
                   break;
-               case 14:
+               case 22:
                   if ((0x7e0000007eL & l) == 0L)
                      break;
                   if (kind > 57)
                      kind = 57;
-                  jjCheckNAddTwoStates(12, 13);
+                  jjCheckNAddTwoStates(20, 21);
                   break;
                default : break;
             }
@@ -966,7 +1000,7 @@ static private int jjMoveNfa_0(int startState, int curPos)
       ++curPos;
       if (jjmatchedKind != 0 && jjmatchedKind != 0x7fffffff)
          debugStream.println("   Currently matched the first " + (jjmatchedPos + 1) + " characters as a " + tokenImage[jjmatchedKind] + " token.");
-      if ((i = jjnewStateCnt) == (startsAt = 16 - (jjnewStateCnt = startsAt)))
+      if ((i = jjnewStateCnt) == (startsAt = 24 - (jjnewStateCnt = startsAt)))
          return curPos;
       debugStream.println("   Possible kinds of longer matches : " + jjKindsForStateVector(curLexState, jjstateSet, startsAt, i));
       try { curChar = input_stream.readChar(); }
@@ -975,7 +1009,7 @@ static private int jjMoveNfa_0(int startState, int curPos)
    }
 }
 static final int[] jjnextStates = {
-   4, 6, 12, 13, 
+   12, 14, 20, 21, 
 };
 
 /** Token literal values. */
@@ -997,8 +1031,8 @@ static final long[] jjtoSkip = {
    0x2L, 0x0L, 
 };
 static protected SimpleCharStream input_stream;
-static private final int[] jjrounds = new int[16];
-static private final int[] jjstateSet = new int[32];
+static private final int[] jjrounds = new int[24];
+static private final int[] jjstateSet = new int[48];
 private static final StringBuilder jjimage = new StringBuilder();
 private static StringBuilder image = jjimage;
 private static int jjimageLen;
@@ -1029,7 +1063,7 @@ static private void ReInitRounds()
 {
    int i;
    jjround = 0x80000001;
-   for (i = 16; i-- > 0;)
+   for (i = 24; i-- > 0;)
       jjrounds[i] = 0x80000000;
 }
 
@@ -1152,28 +1186,36 @@ public static Token getNextToken()
 
 protected static final int[][][] statesForState = {
  {
-   { 0, 1, 7, 9, },
-   { 0, 1, 7, 9, },
-   { 2 },
+   { 0, 1, 9, 15, 17, },
+   { 0, 1, 9, 15, 17, },
+   { 2, 10, },
    { 3 },
    { 4 },
    { 5 },
    { 6 },
-   { 0, 1, 7, 9, },
+   { 7 },
    { 8 },
-   { 0, 1, 7, 9, },
-   { 10 },
+   { 0, 1, 9, 15, 17, },
+   { 2, 10, },
    { 11 },
    { 12 },
    { 13 },
    { 14 },
-   { 15 },
+   { 0, 1, 9, 15, 17, },
+   { 16 },
+   { 0, 1, 9, 15, 17, },
+   { 18 },
+   { 19 },
+   { 20 },
+   { 21 },
+   { 22 },
+   { 23 },
  },
 
 };
 protected static final int[][] kindForState = {
-{ 1, 54, 54, 54, 54, 54, 54, 55, 55, 56, 56, 57, 57, 57,
-  57, 57}
+{ 1, 2, 2, 2, 2, 2, 2, 2, 2, 54, 54, 54, 54, 54,
+  54, 55, 55, 56, 56, 57, 57, 57, 57, 57}
 };
   static  int kindCnt = 0;
   protected static  final String jjKindsForBitVector(int i, long vec)
@@ -1231,211 +1273,211 @@ static void TokenLexicalActions(Token matchedToken)
    {
       case 2 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("ABSTRACT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD ABSTRACT token:" + matchedToken.image  );
          break;
       case 3 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("DEFAULT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD DEFAULT token:" + matchedToken.image  );
          break;
       case 4 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("GOTO token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD GOTO token:" + matchedToken.image  );
          break;
       case 5 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("PACKAGE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD PACKAGE token:" + matchedToken.image  );
          break;
       case 6 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("SYNCHRONIZED token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD SYNCHRONIZED token:" + matchedToken.image  );
          break;
       case 7 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("ASSERT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD ASSERT token:" + matchedToken.image  );
          break;
       case 8 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("DO token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD DO token:" + matchedToken.image  );
          break;
       case 9 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("IF token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD IF token:" + matchedToken.image  );
          break;
       case 10 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("PRIVATE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD PRIVATE token:" + matchedToken.image  );
          break;
       case 11 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("THIS token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD THIS token:" + matchedToken.image  );
          break;
       case 12 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("BOOLEAN token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD BOOLEAN token:" + matchedToken.image  );
          break;
       case 13 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("DOUBLE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD DOUBLE token:" + matchedToken.image  );
          break;
       case 14 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("IMPLEMENTS token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD IMPLEMENTS token:" + matchedToken.image  );
          break;
       case 15 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("PROTECTED token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD PROTECTED token:" + matchedToken.image  );
          break;
       case 16 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("THROW token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD THROW token:" + matchedToken.image  );
          break;
       case 17 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("BREAK token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD BREAK token:" + matchedToken.image  );
          break;
       case 18 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("ELSE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD ELSE token:" + matchedToken.image  );
          break;
       case 19 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("IMPORT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD IMPORT token:" + matchedToken.image  );
          break;
       case 20 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("PUBLIC token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD PUBLIC token:" + matchedToken.image  );
          break;
       case 21 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("THROWS token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD THROWS token:" + matchedToken.image  );
          break;
       case 22 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("BYTE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD BYTE token:" + matchedToken.image  );
          break;
       case 23 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("ENUM token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD ENUM token:" + matchedToken.image  );
          break;
       case 24 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("INSTANCEOF token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD INSTANCEOF token:" + matchedToken.image  );
          break;
       case 25 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("RETURN token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD RETURN token:" + matchedToken.image  );
          break;
       case 26 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("TRANSIENT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD TRANSIENT token:" + matchedToken.image  );
          break;
       case 27 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("CASE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD CASE token:" + matchedToken.image  );
          break;
       case 28 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("EXTENDS token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD EXTENDS token:" + matchedToken.image  );
          break;
       case 29 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("INT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD INT token:" + matchedToken.image  );
          break;
       case 30 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("SHORT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD SHORT token:" + matchedToken.image  );
          break;
       case 31 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("TRUE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD TRUE token:" + matchedToken.image  );
          break;
       case 32 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("CATCH token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD CATCH token:" + matchedToken.image  );
          break;
       case 33 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("FALSE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD FALSE token:" + matchedToken.image  );
          break;
       case 34 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("INTERFACE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD INTERFACE token:" + matchedToken.image  );
          break;
       case 35 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("STATIC token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD STATIC token:" + matchedToken.image  );
          break;
       case 36 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("TRY token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD TRY token:" + matchedToken.image  );
          break;
       case 37 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("CHAR token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD CHAR token:" + matchedToken.image  );
          break;
       case 38 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("FINAL token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD FINAL token:" + matchedToken.image  );
          break;
       case 39 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("LONG token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD LONG token:" + matchedToken.image  );
          break;
       case 40 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("STRICTFP token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD STRICTFP token:" + matchedToken.image  );
          break;
       case 41 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("VOID token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD VOID token:" + matchedToken.image  );
          break;
       case 42 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("CLASS token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD CLASS token:" + matchedToken.image  );
          break;
       case 43 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("FINALLY token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD FINALLY token:" + matchedToken.image  );
          break;
       case 44 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("NATIVE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD NATIVE token:" + matchedToken.image  );
          break;
       case 45 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("SUPER token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD SUPER token:" + matchedToken.image  );
          break;
       case 46 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("VOLATILE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD VOLATILE token:" + matchedToken.image  );
          break;
       case 47 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("CONST token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD CONST token:" + matchedToken.image  );
          break;
       case 48 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("FLOAT token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD FLOAT token:" + matchedToken.image  );
          break;
       case 49 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("NEW token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD NEW token:" + matchedToken.image  );
          break;
       case 50 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("SWITCH token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD SWITCH token:" + matchedToken.image  );
          break;
       case 51 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("WHILE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD WHILE token:" + matchedToken.image  );
          break;
       case 52 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("CONTINUE token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD CONTINUE token:" + matchedToken.image  );
          break;
       case 53 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("FOR token:" + matchedToken.image  );
+  debugStream.println("RESERVEDWORD FOR token:" + matchedToken.image  );
          break;
       case 54 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));

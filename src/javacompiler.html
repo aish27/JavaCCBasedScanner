@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>BNF for javacompiler</TITLE>
+</HEAD>
+<BODY>
+<H1 ALIGN=CENTER>BNF for javacompiler</H1>
+<H2 ALIGN=CENTER>TOKENS</H2>
+<TABLE>
+ <!-- Token -->
+ <TR>
+  <TD>
+   <PRE>
+&lt;DEFAULT&gt; SKIP : {
+&lt;IGNORE: [" ",","]&gt;
+}
+
+   </PRE>
+  </TD>
+ </TR>
+ <!-- Token -->
+ <TR>
+  <TD>
+   <PRE>
+&lt;DEFAULT&gt; TOKEN : {
+&lt;RESERVEDWORDABSTRACT: "a" "b" "s" "t" "r" "a" "c" "t"&gt; : {
+| &lt;RESERVEDWORDDEFAULT: "default"&gt; : {
+| &lt;RESERVEDWORDRESERVEDWORDGOTO: "goto"&gt; : {
+| &lt;RESERVEDWORDPACKAGE: "package"&gt; : {
+| &lt;RESERVEDWORDSYNCHRONIZED: "synchronized"&gt; : {
+| &lt;RESERVEDWORDASSERT: "assert"&gt; : {
+| &lt;RESERVEDWORDDO: "do"&gt; : {
+| &lt;RESERVEDWORDIF: "if"&gt; : {
+| &lt;RESERVEDWORDPRIVATE: "private"&gt; : {
+| &lt;RESERVEDWORDTHIS: "this"&gt; : {
+| &lt;RESERVEDWORDBOOLEAN: "boolean"&gt; : {
+| &lt;RESERVEDWORDDOUBLE: "double"&gt; : {
+| &lt;RESERVEDWORDIMPLEMENTS: "implements"&gt; : {
+| &lt;RESERVEDWORDPROTECTED: "protected"&gt; : {
+| &lt;RESERVEDWORDTHROW: "throw"&gt; : {
+| &lt;RESERVEDWORDBREAK: "break"&gt; : {
+| &lt;RESERVEDWORDELSE: "else"&gt; : {
+| &lt;RESERVEDWORDIMPORT: "import"&gt; : {
+| &lt;RESERVEDWORDPUBLIC: "public"&gt; : {
+| &lt;RESERVEDWORDTHROWS: "throws"&gt; : {
+| &lt;RESERVEDWORDBYTE: "byte"&gt; : {
+| &lt;RESERVEDWORDENUM: "enum"&gt; : {
+| &lt;RESERVEDWORDINSTANCEOF: "instanceof"&gt; : {
+| &lt;RESERVEDWORDRETURN: "return"&gt; : {
+| &lt;RESERVEDWORDTRANSIENT: "transient"&gt; : {
+| &lt;RESERVEDWORDCASE: "case"&gt; : {
+| &lt;RESERVEDWORDEXTENDS: "extends"&gt; : {
+| &lt;RESERVEDWORDINT: "int"&gt; : {
+| &lt;RESERVEDWORDSHORT: "short"&gt; : {
+| &lt;RESERVEDWORDTRUE: "true"&gt; : {
+| &lt;RESERVEDWORDCATCH: "catch"&gt; : {
+| &lt;RESERVEDWORDFALSE: "false"&gt; : {
+| &lt;RESERVEDWORDINTERFACE: "interface"&gt; : {
+| &lt;RESERVEDWORDSTATIC: "static"&gt; : {
+| &lt;RESERVEDWORDTRY: "try"&gt; : {
+| &lt;RESERVEDWORDCHAR: "char"&gt; : {
+| &lt;RESERVEDWORDFINAL: "final"&gt; : {
+| &lt;RESERVEDWORDLONG: "long"&gt; : {
+| &lt;RESERVEDWORDSTRICTFP: "strictfp"&gt; : {
+| &lt;RESERVEDWORDVOID: "void"&gt; : {
+| &lt;RESERVEDWORDCLASS: "class"&gt; : {
+| &lt;RESERVEDWORDFINALLY: "finally"&gt; : {
+| &lt;RESERVEDWORDNATIVE: "native"&gt; : {
+| &lt;RESERVEDWORDSUPER: "super"&gt; : {
+| &lt;RESERVEDWORDVOLATILE: "volatile"&gt; : {
+| &lt;RESERVEDWORDCONST: "const"&gt; : {
+| &lt;RESERVEDWORDFLOAT: "float"&gt; : {
+| &lt;RESERVEDWORDNEW: "new"&gt; : {
+| &lt;RESERVEDWORDSWITCH: "switch"&gt; : {
+| &lt;RESERVEDWORDWHILE: "while"&gt; : {
+| &lt;RESERVEDWORDCONTINUE: "continue"&gt; : {
+| &lt;RESERVEDWORDFOR: "for"&gt; : {
+| &lt;IDENTIFIER: &lt;LETTER&gt; (&lt;LETTER&gt; | &lt;DIGIT&gt;)*&gt; : {
+| &lt;DECIMALINTEGER: &lt;NONZERO&gt; (&lt;DIGIT&gt;)*&gt; : {
+| &lt;OCTALINTEGER: &lt;ZERO&gt; (&lt;OCTALS&gt;)*&gt; : {
+| &lt;HEXINTEGER: "0" ("x" | "X") (&lt;DIGIT&gt; | &lt;HEXLETTERS&gt;) (&lt;DIGIT&gt; | &lt;HEXLETTERS&gt;)*&gt; : {
+| &lt;#HEXLETTERS: ["A"-"F"] ["a"-"f"]&gt;
+| &lt;#DIGIT: ["0"-"9"]&gt;
+| &lt;#NONZERO: ["1"-"9"]&gt;
+| &lt;#LETTER: ["a"-"z"] ["A"-"Z"] ["_"]&gt;
+| &lt;#OCTALS: ["0"-"7"]&gt;
+| &lt;#ZERO: ["0"]&gt;
+}
+
+   </PRE>
+  </TD>
+ </TR>
+</TABLE>
+<H2 ALIGN=CENTER>NON-TERMINALS</H2>
+<TABLE>
+</TABLE>
+</BODY>
+</HTML>
