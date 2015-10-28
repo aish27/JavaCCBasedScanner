@@ -1,0 +1,173 @@
+
+
+options {
+    BUILD_PARSER=false;
+    //is there a certain reason the case variable was marked true?
+    IGNORE_CASE=false;
+    DEBUG_TOKEN_MANAGER=true;
+}
+
+PARSER_BEGIN(HelloWorld)
+    public class HelloWorld {}
+PARSER_END(HelloWorld)
+
+TOKEN_MGR_DECLS : {
+    public static void main(String[] args) throws java.io.FileNotFoundException
+    {
+        //java.io.StringReader sr = new java.io.StringReader(args[0]);
+        java.io.FileReader fr= new java.io.FileReader(args[0]);
+        SimpleCharStream scs = new SimpleCharStream(fr);
+        HelloWorldTokenManager mgr = new HelloWorldTokenManager(scs);
+
+        while (mgr.getNextToken().kind != EOF) {}
+    }
+}
+
+SKIP : {
+   <IGNORE : [" ", ",", "\n"]> |
+   <SINGLELINECOMMENT: "//" (~["\n","\r"])* ("\n"|"\r"|"\r\n")>
+{ debugStream.println("SingleLineComment"); } 
+}
+SKIP :
+{
+  "/*" : WithinComment
+}
+<WithinComment> SKIP :
+{
+  "*/" : DEFAULT
+}
+
+<WithinComment> MORE :
+{
+  <~[]>
+}
+
+TOKEN : {
+
+     <RESERVEDWORDABSTRACT :"abstract"> 
+{ debugStream.println("RESERVEDWORD ABSTRACT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDDEFAULT :"default"> 
+{ debugStream.println("RESERVEDWORD DEFAULT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDRESERVEDWORDGOTO :"goto"> 
+{ debugStream.println("RESERVEDWORD GOTO token:" + matchedToken.image  ); }
+ |<RESERVEDWORDPACKAGE :"package"> 
+{ debugStream.println("RESERVEDWORD PACKAGE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDSYNCHRONIZED :"synchronized"> 
+{ debugStream.println("RESERVEDWORD SYNCHRONIZED token:" + matchedToken.image  ); }
+ |<RESERVEDWORDASSERT :"assert"> 
+{ debugStream.println("RESERVEDWORD ASSERT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDDO :"do"> 
+{ debugStream.println("RESERVEDWORD DO token:" + matchedToken.image  ); }
+ |<RESERVEDWORDIF :"if"> 
+{ debugStream.println("RESERVEDWORD IF token:" + matchedToken.image  ); }
+ |<RESERVEDWORDPRIVATE :"private"> 
+{ debugStream.println("RESERVEDWORD PRIVATE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDTHIS :"this"> 
+{ debugStream.println("RESERVEDWORD THIS token:" + matchedToken.image  ); }
+ |<RESERVEDWORDBOOLEAN :"boolean"> 
+{ debugStream.println("RESERVEDWORD BOOLEAN token:" + matchedToken.image  ); }
+ |<RESERVEDWORDDOUBLE :"double"> 
+{ debugStream.println("RESERVEDWORD DOUBLE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDIMPLEMENTS :"implements"> 
+{ debugStream.println("RESERVEDWORD IMPLEMENTS token:" + matchedToken.image  ); }
+ |<RESERVEDWORDPROTECTED :"protected"> 
+{ debugStream.println("RESERVEDWORD PROTECTED token:" + matchedToken.image  ); }
+ |<RESERVEDWORDTHROW :"throw"> 
+{ debugStream.println("RESERVEDWORD THROW token:" + matchedToken.image  ); }
+ |<RESERVEDWORDBREAK :"break"> 
+{ debugStream.println("RESERVEDWORD BREAK token:" + matchedToken.image  ); }
+ |<RESERVEDWORDELSE :"else"> 
+{ debugStream.println("RESERVEDWORD ELSE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDIMPORT :"import"> 
+{ debugStream.println("RESERVEDWORD IMPORT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDPUBLIC :"public"> 
+{ debugStream.println("RESERVEDWORD PUBLIC token:" + matchedToken.image  ); }
+ |<RESERVEDWORDTHROWS :"throws"> 
+{ debugStream.println("RESERVEDWORD THROWS token:" + matchedToken.image  ); }
+ |<RESERVEDWORDBYTE :"byte"> 
+{ debugStream.println("RESERVEDWORD BYTE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDENUM :"enum"> 
+{ debugStream.println("RESERVEDWORD ENUM token:" + matchedToken.image  ); }
+ |<RESERVEDWORDINSTANCEOF :"instanceof"> 
+{ debugStream.println("RESERVEDWORD INSTANCEOF token:" + matchedToken.image  ); }
+ |<RESERVEDWORDRETURN :"return"> 
+{ debugStream.println("RESERVEDWORD RETURN token:" + matchedToken.image  ); }
+ |<RESERVEDWORDTRANSIENT :"transient"> 
+{ debugStream.println("RESERVEDWORD TRANSIENT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDCASE :"case"> 
+{ debugStream.println("RESERVEDWORD CASE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDEXTENDS :"extends"> 
+{ debugStream.println("RESERVEDWORD EXTENDS token:" + matchedToken.image  ); }
+ |<RESERVEDWORDINT :"int"> 
+{ debugStream.println("RESERVEDWORD INT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDSHORT :"short"> 
+{ debugStream.println("RESERVEDWORD SHORT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDTRUE :"true"> 
+{ debugStream.println("RESERVEDWORD TRUE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDCATCH :"catch"> 
+{ debugStream.println("RESERVEDWORD CATCH token:" + matchedToken.image  ); }
+ |<RESERVEDWORDFALSE :"false"> 
+{ debugStream.println("RESERVEDWORD FALSE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDINTERFACE :"interface"> 
+{ debugStream.println("RESERVEDWORD INTERFACE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDSTATIC :"static"> 
+{ debugStream.println("RESERVEDWORD STATIC token:" + matchedToken.image  ); }
+ |<RESERVEDWORDTRY :"try"> 
+{ debugStream.println("RESERVEDWORD TRY token:" + matchedToken.image  ); }
+ |<RESERVEDWORDCHAR :"char"> 
+{ debugStream.println("RESERVEDWORD CHAR token:" + matchedToken.image  ); }
+ |<RESERVEDWORDFINAL :"final"> 
+{ debugStream.println("RESERVEDWORD FINAL token:" + matchedToken.image  ); }
+ |<RESERVEDWORDLONG :"long"> 
+{ debugStream.println("RESERVEDWORD LONG token:" + matchedToken.image  ); }
+ |<RESERVEDWORDSTRICTFP :"strictfp"> 
+{ debugStream.println("RESERVEDWORD STRICTFP token:" + matchedToken.image  ); }
+ |<RESERVEDWORDVOID :"void"> 
+{ debugStream.println("RESERVEDWORD VOID token:" + matchedToken.image  ); }
+ |<RESERVEDWORDCLASS :"class"> 
+{ debugStream.println("RESERVEDWORD CLASS token:" + matchedToken.image  ); }
+ |<RESERVEDWORDFINALLY :"finally"> 
+{ debugStream.println("RESERVEDWORD FINALLY token:" + matchedToken.image  ); }
+ |<RESERVEDWORDNATIVE :"native"> 
+{ debugStream.println("RESERVEDWORD NATIVE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDSUPER :"super"> 
+{ debugStream.println("RESERVEDWORD SUPER token:" + matchedToken.image  ); }
+ |<RESERVEDWORDVOLATILE :"volatile"> 
+{ debugStream.println("RESERVEDWORD VOLATILE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDCONST :"const"> 
+{ debugStream.println("RESERVEDWORD CONST token:" + matchedToken.image  ); }
+ |<RESERVEDWORDFLOAT :"float"> 
+{ debugStream.println("RESERVEDWORD FLOAT token:" + matchedToken.image  ); }
+ |<RESERVEDWORDNEW :"new"> 
+{ debugStream.println("RESERVEDWORD NEW token:" + matchedToken.image  ); }
+ |<RESERVEDWORDSWITCH :"switch"> 
+{ debugStream.println("RESERVEDWORD SWITCH token:" + matchedToken.image  ); }
+ |<RESERVEDWORDWHILE :"while"> 
+{ debugStream.println("RESERVEDWORD WHILE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDCONTINUE :"continue"> 
+{ debugStream.println("RESERVEDWORD CONTINUE token:" + matchedToken.image  ); }
+ |<RESERVEDWORDFOR :"for"> 
+{ debugStream.println("RESERVEDWORD FOR token:" + matchedToken.image  ); }
+ | <WORDTOKEN : (<LETTER>(<LETTER>)*)(["?","!","."]|"")>
+{ debugStream.println("WORDTOKEN: " + matchedToken.image); }
+ | <IDENTIFIER : <LETTER> (<LETTER> | <DIGIT> )*>
+{ debugStream.println("IDENTIFIER token: " + matchedToken.image); }
+ | <INTEGER : <NONZERO> (<DIGIT> )*>
+{ debugStream.println("INTEGER token: " + matchedToken.image); }
+ | <REALNUMBER : (<DIGIT>(<DIGIT>)* ("."|"")(<DIGIT>)* ("e"|"E"|"")("+"|"-"|"")(<DIGIT>)*)>
+{ debugStream.println("REALNUMBER: " + matchedToken.image); }
+ | <DECIMALNUMBER : ("."(<DIGIT>)* ("e"|"E"|"")("+"|"-"|"")(<DIGIT>)*)>
+{ debugStream.println("DECIMALNUMBER: " + matchedToken.image); }
+ | <OCTALINTEGER : <ZERO>(<OCTALS> )*>
+{ debugStream.println("OCTAL INTEGER token: " + matchedToken.image); }
+ | <HEXINTEGER : "0"("x"|"X")(<DIGIT>|<HEXLETTERS>)(<DIGIT>|<HEXLETTERS> )*>
+{ debugStream.println("HEXADECIMAL INTEGER token: " + matchedToken.image); }
+ | <#HEXLETTERS:["A"-"F","a"-"f"]>
+ | <#DIGIT  : ["0"-"9"]>
+ | <#NONZERO  : ["1"-"9"]>
+ | <#LETTER : ["a"-"z","A"-"Z","_"]>
+ | <#OCTALS: ["0"-"7"]>
+ | <#ZERO : ["0"]>
+
+
+}

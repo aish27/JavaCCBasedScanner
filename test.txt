@@ -1,0 +1,24 @@
+/* This is a comment. */
+// So is this.
+
+/* Here's a comment
+   that spans several
+   source lines. */
+
+/*comments in*//***a row***/
+/* This is /* not a nested comment. */
+// Nor is /* this */ one.
+
+// Word tokens
+Hello world
+Abstract abstract ABSTRACT aBsTrAcT
+What_is_that?
+
+// Number tokens
+0 1 12.0 00000000000000000012 .12 1..2
+012 0x12 0xAb 0x0E12
+12. 0.12 .12 1.2e+2 12e+2 12e2 0e2
+12e-2 12e-5 .12e+2 12.e+2 12e-1 12e12
+.31415926 3.1415926
+0.00031415926E4  0.00031415926e+00004  31415.926e-4
+3141592600000000000000000000000e-30
