@@ -6,7 +6,7 @@ public class HelloWorldTokenManager implements HelloWorldConstants
     public static void main(String[] args) throws java.io.FileNotFoundException
     {
         //java.io.StringReader sr = new java.io.StringReader(args[0]);
-        java.io.FileReader fr= new java.io.FileReader(args[0]);//
+        java.io.FileReader fr= new java.io.FileReader(args[0]);
         SimpleCharStream scs = new SimpleCharStream(fr);
         HelloWorldTokenManager mgr = new HelloWorldTokenManager(scs);
 
@@ -744,8 +744,8 @@ static private int jjMoveNfa_0(int startState, int curPos)
                   }
                   else if ((0x3ff000000000000L & l) != 0L)
                   {
-                     if (kind > 64)
-                        kind = 64;
+                     if (kind > 66)
+                        kind = 66;
                      jjCheckNAddStates(3, 6);
                   }
                   else if ((0x2400L & l) != 0L)
@@ -759,15 +759,15 @@ static private int jjMoveNfa_0(int startState, int curPos)
                         kind = 63;
                      jjCheckNAdd(64);
                   }
-                  else if ((0x100100000400L & l) != 0L)
+                  else if ((0x100000400L & l) != 0L)
                   {
                      if (kind > 1)
                         kind = 1;
                   }
                   else if (curChar == 48)
                   {
-                     if (kind > 66)
-                        kind = 66;
+                     if (kind > 64)
+                        kind = 64;
                      jjCheckNAddTwoStates(98, 99);
                   }
                   else if (curChar == 47)
@@ -784,8 +784,8 @@ static private int jjMoveNfa_0(int startState, int curPos)
                      jjCheckNAddTwoStates(78, 55);
                   else if (curChar == 46)
                   {
-                     if (kind > 65)
-                        kind = 65;
+                     if (kind > 67)
+                        kind = 67;
                      jjCheckNAddStates(13, 15);
                   }
                   else if (curChar == 33)
@@ -854,7 +854,7 @@ static private int jjMoveNfa_0(int startState, int curPos)
                      jjCheckNAdd(4);
                   break;
                case 11:
-                  if ((0x100100000400L & l) == 0L)
+                  if ((0x100000400L & l) == 0L)
                      break;
                   if (kind > 7)
                      kind = 7;
@@ -1060,71 +1060,71 @@ static private int jjMoveNfa_0(int startState, int curPos)
                case 65:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
-                  if (kind > 64)
-                     kind = 64;
+                  if (kind > 66)
+                     kind = 66;
                   jjCheckNAddStates(3, 6);
                   break;
                case 66:
                   if (curChar != 46)
                      break;
-                  if (kind > 64)
-                     kind = 64;
+                  if (kind > 66)
+                     kind = 66;
                   jjCheckNAddStates(70, 72);
                   break;
                case 68:
                   if ((0x280000000000L & l) == 0L)
                      break;
-                  if (kind > 64)
-                     kind = 64;
+                  if (kind > 66)
+                     kind = 66;
                   jjCheckNAdd(69);
                   break;
                case 69:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
-                  if (kind > 64)
-                     kind = 64;
+                  if (kind > 66)
+                     kind = 66;
                   jjCheckNAdd(69);
                   break;
                case 70:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
-                  if (kind > 64)
-                     kind = 64;
+                  if (kind > 66)
+                     kind = 66;
                   jjCheckNAddStates(73, 76);
                   break;
                case 71:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
-                  if (kind > 64)
-                     kind = 64;
+                  if (kind > 66)
+                     kind = 66;
                   jjCheckNAddStates(77, 82);
                   break;
                case 72:
                   if (curChar != 46)
                      break;
-                  if (kind > 65)
-                     kind = 65;
+                  if (kind > 67)
+                     kind = 67;
                   jjCheckNAddStates(13, 15);
                   break;
                case 74:
                   if ((0x280000000000L & l) == 0L)
                      break;
-                  if (kind > 65)
-                     kind = 65;
+                  if (kind > 67)
+                     kind = 67;
                   jjCheckNAdd(75);
                   break;
                case 75:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
-                  if (kind > 65)
-                     kind = 65;
+                  if (kind > 67)
+                     kind = 67;
                   jjCheckNAdd(75);
                   break;
                case 76:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
-                  if (kind > 65)
-                     kind = 65;
+                  if (kind > 67)
+                     kind = 67;
                   jjCheckNAddStates(83, 86);
                   break;
                case 77:
@@ -1198,22 +1198,22 @@ static private int jjMoveNfa_0(int startState, int curPos)
                case 97:
                   if (curChar != 48)
                      break;
-                  if (kind > 66)
-                     kind = 66;
+                  if (kind > 64)
+                     kind = 64;
                   jjCheckNAddTwoStates(98, 99);
                   break;
                case 98:
                   if ((0xff000000000000L & l) == 0L)
                      break;
-                  if (kind > 66)
-                     kind = 66;
+                  if (kind > 64)
+                     kind = 64;
                   jjCheckNAdd(98);
                   break;
                case 100:
                   if ((0x3ff000000000000L & l) == 0L)
                      break;
-                  if (kind > 67)
-                     kind = 67;
+                  if (kind > 65)
+                     kind = 65;
                   jjstateSet[jjnewStateCnt++] = 100;
                   break;
                default : break;
@@ -1305,15 +1305,15 @@ static private int jjMoveNfa_0(int startState, int curPos)
                case 67:
                   if ((0x2000000020L & l) == 0L)
                      break;
-                  if (kind > 64)
-                     kind = 64;
+                  if (kind > 66)
+                     kind = 66;
                   jjAddStates(87, 88);
                   break;
                case 73:
                   if ((0x2000000020L & l) == 0L)
                      break;
-                  if (kind > 65)
-                     kind = 65;
+                  if (kind > 67)
+                     kind = 67;
                   jjAddStates(89, 90);
                   break;
                case 87:
@@ -1334,8 +1334,8 @@ static private int jjMoveNfa_0(int startState, int curPos)
                case 100:
                   if ((0x7e0000007eL & l) == 0L)
                      break;
-                  if (kind > 67)
-                     kind = 67;
+                  if (kind > 65)
+                     kind = 65;
                   jjCheckNAdd(100);
                   break;
                default : break;
@@ -1909,23 +1909,23 @@ static void TokenLexicalActions(Token matchedToken)
          break;
       case 63 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("INTEGER token: " + matchedToken.image);
+  debugStream.println("DECIMAL INTEGER token: " + matchedToken.image);
          break;
       case 64 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("REALNUMBER: " + matchedToken.image);
+  debugStream.println("OCTAL INTEGER token: " + matchedToken.image);
          break;
       case 65 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("DECIMALNUMBER: " + matchedToken.image);
+  debugStream.println("HEXADECIMAL INTEGER token: " + matchedToken.image);
          break;
       case 66 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("OCTAL INTEGER token: " + matchedToken.image);
+  debugStream.println("REALNUMBER: " + matchedToken.image);
          break;
       case 67 :
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-  debugStream.println("HEXADECIMAL INTEGER token: " + matchedToken.image);
+  debugStream.println("REALNUMBER: " + matchedToken.image);
          break;
       default :
          break;
