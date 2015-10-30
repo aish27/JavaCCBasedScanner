@@ -2,7 +2,8 @@
 
 options {
     BUILD_PARSER=false;
-    IGNORE_CASE=true;
+    //is there a certain reason the case variable was marked true?
+    IGNORE_CASE=false;
     DEBUG_TOKEN_MANAGER=true;
 }
 
@@ -11,10 +12,11 @@ PARSER_BEGIN(HelloWorld)
 PARSER_END(HelloWorld)
 
 TOKEN_MGR_DECLS : {
-    public static void main(String[] args)
+    public static void main(String[] args) throws java.io.FileNotFoundException
     {
-        java.io.StringReader sr = new java.io.StringReader(args[0]);
-        SimpleCharStream scs = new SimpleCharStream(sr);
+        //java.io.StringReader sr = new java.io.StringReader(args[0]);
+        java.io.FileReader fr= new java.io.FileReader(args[0]);
+        SimpleCharStream scs = new SimpleCharStream(fr);
         HelloWorldTokenManager mgr = new HelloWorldTokenManager(scs);
 
         while (mgr.getNextToken().kind != EOF) {}
@@ -22,12 +24,31 @@ TOKEN_MGR_DECLS : {
 }
 
 SKIP : {
-   <IGNORE : [" ", ","]>
+   <IGNORE : [" ", ",", "\n"]> |
+   <SINGLELINECOMMENT: "//" (~["\n","\r"])* ("\n"|"\r"|"\r\n")>
+{ debugStream.println("SingleLineComment"); } 
+| < NEWLINE: ["\n", "\r"] > 
+}
+SKIP :
+{
+  "/*" : WithinComment
+}
+<WithinComment> SKIP :
+{
+  "*/" : DEFAULT
+}
+
+<WithinComment> MORE :
+{
+  <~[]>
 }
 
 TOKEN : {
+<STRING: "\"">
+{debugStream.println("STRING token: " + matchedToken.image);}
+|
 
-     <RESERVEDWORDABSTRACT :"a""b""s""t""r""a""c""t"> 
+     <RESERVEDWORDABSTRACT :"abstract"> 
 { debugStream.println("RESERVEDWORD ABSTRACT token:" + matchedToken.image  ); }
  |<RESERVEDWORDDEFAULT :"default"> 
 { debugStream.println("RESERVEDWORD DEFAULT token:" + matchedToken.image  ); }
@@ -131,20 +152,27 @@ TOKEN : {
 { debugStream.println("RESERVEDWORD CONTINUE token:" + matchedToken.image  ); }
  |<RESERVEDWORDFOR :"for"> 
 { debugStream.println("RESERVEDWORD FOR token:" + matchedToken.image  ); }
+ | <WORDTOKEN : (<LETTER>(<LETTER>)*)(["?","!","."]|"")>
+{ debugStream.println("WORDTOKEN: " + matchedToken.image); }
+|<SPECIALSYMBOLTOKEN: "~">
+{ debugStream.println("SPECIAL SYMBOL ~: " + matchedToken.image); }
  | <IDENTIFIER : <LETTER> (<LETTER> | <DIGIT> )*>
 { debugStream.println("IDENTIFIER token: " + matchedToken.image); }
- | <DECIMALINTEGER : <NONZERO> (<DIGIT> )*>
-{ debugStream.println("DECIMAL INTEGER token: " + matchedToken.image); }
+ | <INTEGER : <NONZERO> (<DIGIT> )*>
+{ debugStream.println("INTEGER token: " + matchedToken.image); }
+ | <REALNUMBER : (<DIGIT>(<DIGIT>)* ("."|"")(<DIGIT>)* ("e"|"E"|"")("+"|"-"|"")(<DIGIT>)*)>
+{ debugStream.println("REALNUMBER: " + matchedToken.image); }
+ | <DECIMALNUMBER : ("."(<DIGIT>)* ("e"|"E"|"")("+"|"-"|"")(<DIGIT>)*)>
+{ debugStream.println("DECIMALNUMBER: " + matchedToken.image); }
  | <OCTALINTEGER : <ZERO>(<OCTALS> )*>
 { debugStream.println("OCTAL INTEGER token: " + matchedToken.image); }
  | <HEXINTEGER : "0"("x"|"X")(<DIGIT>|<HEXLETTERS>)(<DIGIT>|<HEXLETTERS> )*>
 { debugStream.println("HEXADECIMAL INTEGER token: " + matchedToken.image); }
- | <#HEXLETTERS:["A"-"F"]["a"-"f"]>
+ | <#HEXLETTERS:["A"-"F","a"-"f"]>
  | <#DIGIT  : ["0"-"9"]>
  | <#NONZERO  : ["1"-"9"]>
- | <#LETTER : ["a"-"z"]["A"-"Z"]["_"]>
+ | <#LETTER : ["a"-"z","A"-"Z","_"]>
  | <#OCTALS: ["0"-"7"]>
  | <#ZERO : ["0"]>
-
 
 }

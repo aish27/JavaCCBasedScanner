@@ -11,138 +11,161 @@ public interface HelloWorldConstants {
   /** RegularExpression Id. */
   int IGNORE = 1;
   /** RegularExpression Id. */
-  int RESERVEDWORDABSTRACT = 2;
+  int SINGLELINECOMMENT = 2;
   /** RegularExpression Id. */
-  int RESERVEDWORDDEFAULT = 3;
+  int NEWLINE = 3;
   /** RegularExpression Id. */
-  int RESERVEDWORDRESERVEDWORDGOTO = 4;
+  int STRING = 7;
   /** RegularExpression Id. */
-  int RESERVEDWORDPACKAGE = 5;
+  int CHAR = 8;
   /** RegularExpression Id. */
-  int RESERVEDWORDSYNCHRONIZED = 6;
+  int RESERVEDWORDABSTRACT = 9;
   /** RegularExpression Id. */
-  int RESERVEDWORDASSERT = 7;
+  int RESERVEDWORDDEFAULT = 10;
   /** RegularExpression Id. */
-  int RESERVEDWORDDO = 8;
+  int RESERVEDWORDRESERVEDWORDGOTO = 11;
   /** RegularExpression Id. */
-  int RESERVEDWORDIF = 9;
+  int RESERVEDWORDPACKAGE = 12;
   /** RegularExpression Id. */
-  int RESERVEDWORDPRIVATE = 10;
+  int RESERVEDWORDSYNCHRONIZED = 13;
   /** RegularExpression Id. */
-  int RESERVEDWORDTHIS = 11;
+  int RESERVEDWORDASSERT = 14;
   /** RegularExpression Id. */
-  int RESERVEDWORDBOOLEAN = 12;
+  int RESERVEDWORDDO = 15;
   /** RegularExpression Id. */
-  int RESERVEDWORDDOUBLE = 13;
+  int RESERVEDWORDIF = 16;
   /** RegularExpression Id. */
-  int RESERVEDWORDIMPLEMENTS = 14;
+  int RESERVEDWORDPRIVATE = 17;
   /** RegularExpression Id. */
-  int RESERVEDWORDPROTECTED = 15;
+  int RESERVEDWORDTHIS = 18;
   /** RegularExpression Id. */
-  int RESERVEDWORDTHROW = 16;
+  int RESERVEDWORDBOOLEAN = 19;
   /** RegularExpression Id. */
-  int RESERVEDWORDBREAK = 17;
+  int RESERVEDWORDDOUBLE = 20;
   /** RegularExpression Id. */
-  int RESERVEDWORDELSE = 18;
+  int RESERVEDWORDIMPLEMENTS = 21;
   /** RegularExpression Id. */
-  int RESERVEDWORDIMPORT = 19;
+  int RESERVEDWORDPROTECTED = 22;
   /** RegularExpression Id. */
-  int RESERVEDWORDPUBLIC = 20;
+  int RESERVEDWORDTHROW = 23;
   /** RegularExpression Id. */
-  int RESERVEDWORDTHROWS = 21;
+  int RESERVEDWORDBREAK = 24;
   /** RegularExpression Id. */
-  int RESERVEDWORDBYTE = 22;
+  int RESERVEDWORDELSE = 25;
   /** RegularExpression Id. */
-  int RESERVEDWORDENUM = 23;
+  int RESERVEDWORDIMPORT = 26;
   /** RegularExpression Id. */
-  int RESERVEDWORDINSTANCEOF = 24;
+  int RESERVEDWORDPUBLIC = 27;
   /** RegularExpression Id. */
-  int RESERVEDWORDRETURN = 25;
+  int RESERVEDWORDTHROWS = 28;
   /** RegularExpression Id. */
-  int RESERVEDWORDTRANSIENT = 26;
+  int RESERVEDWORDBYTE = 29;
   /** RegularExpression Id. */
-  int RESERVEDWORDCASE = 27;
+  int RESERVEDWORDENUM = 30;
   /** RegularExpression Id. */
-  int RESERVEDWORDEXTENDS = 28;
+  int RESERVEDWORDINSTANCEOF = 31;
   /** RegularExpression Id. */
-  int RESERVEDWORDINT = 29;
+  int RESERVEDWORDRETURN = 32;
   /** RegularExpression Id. */
-  int RESERVEDWORDSHORT = 30;
+  int RESERVEDWORDTRANSIENT = 33;
   /** RegularExpression Id. */
-  int RESERVEDWORDTRUE = 31;
+  int RESERVEDWORDCASE = 34;
   /** RegularExpression Id. */
-  int RESERVEDWORDCATCH = 32;
+  int RESERVEDWORDEXTENDS = 35;
   /** RegularExpression Id. */
-  int RESERVEDWORDFALSE = 33;
+  int RESERVEDWORDINT = 36;
   /** RegularExpression Id. */
-  int RESERVEDWORDINTERFACE = 34;
+  int RESERVEDWORDSHORT = 37;
   /** RegularExpression Id. */
-  int RESERVEDWORDSTATIC = 35;
+  int RESERVEDWORDTRUE = 38;
   /** RegularExpression Id. */
-  int RESERVEDWORDTRY = 36;
+  int RESERVEDWORDCATCH = 39;
   /** RegularExpression Id. */
-  int RESERVEDWORDCHAR = 37;
+  int RESERVEDWORDFALSE = 40;
   /** RegularExpression Id. */
-  int RESERVEDWORDFINAL = 38;
+  int RESERVEDWORDINTERFACE = 41;
   /** RegularExpression Id. */
-  int RESERVEDWORDLONG = 39;
+  int RESERVEDWORDSTATIC = 42;
   /** RegularExpression Id. */
-  int RESERVEDWORDSTRICTFP = 40;
+  int RESERVEDWORDTRY = 43;
   /** RegularExpression Id. */
-  int RESERVEDWORDVOID = 41;
+  int RESERVEDWORDCHAR = 44;
   /** RegularExpression Id. */
-  int RESERVEDWORDCLASS = 42;
+  int RESERVEDWORDFINAL = 45;
   /** RegularExpression Id. */
-  int RESERVEDWORDFINALLY = 43;
+  int RESERVEDWORDLONG = 46;
   /** RegularExpression Id. */
-  int RESERVEDWORDNATIVE = 44;
+  int RESERVEDWORDSTRICTFP = 47;
   /** RegularExpression Id. */
-  int RESERVEDWORDSUPER = 45;
+  int RESERVEDWORDVOID = 48;
   /** RegularExpression Id. */
-  int RESERVEDWORDVOLATILE = 46;
+  int RESERVEDWORDCLASS = 49;
   /** RegularExpression Id. */
-  int RESERVEDWORDCONST = 47;
+  int RESERVEDWORDFINALLY = 50;
   /** RegularExpression Id. */
-  int RESERVEDWORDFLOAT = 48;
+  int RESERVEDWORDNATIVE = 51;
   /** RegularExpression Id. */
-  int RESERVEDWORDNEW = 49;
+  int RESERVEDWORDSUPER = 52;
   /** RegularExpression Id. */
-  int RESERVEDWORDSWITCH = 50;
+  int RESERVEDWORDVOLATILE = 53;
   /** RegularExpression Id. */
-  int RESERVEDWORDWHILE = 51;
+  int RESERVEDWORDCONST = 54;
   /** RegularExpression Id. */
-  int RESERVEDWORDCONTINUE = 52;
+  int RESERVEDWORDFLOAT = 55;
   /** RegularExpression Id. */
-  int RESERVEDWORDFOR = 53;
+  int RESERVEDWORDNEW = 56;
   /** RegularExpression Id. */
-  int IDENTIFIER = 54;
+  int RESERVEDWORDSWITCH = 57;
   /** RegularExpression Id. */
-  int DECIMALINTEGER = 55;
+  int RESERVEDWORDWHILE = 58;
   /** RegularExpression Id. */
-  int OCTALINTEGER = 56;
+  int RESERVEDWORDCONTINUE = 59;
   /** RegularExpression Id. */
-  int HEXINTEGER = 57;
+  int RESERVEDWORDFOR = 60;
   /** RegularExpression Id. */
-  int HEXLETTERS = 58;
+  int SPECIALSYMBOL = 61;
   /** RegularExpression Id. */
-  int DIGIT = 59;
+  int IDENTIFIER = 62;
   /** RegularExpression Id. */
-  int NONZERO = 60;
+  int INTEGER = 63;
   /** RegularExpression Id. */
-  int LETTER = 61;
+  int REALNUMBER = 64;
   /** RegularExpression Id. */
-  int OCTALS = 62;
+  int DECIMALNUMBER = 65;
   /** RegularExpression Id. */
-  int ZERO = 63;
+  int OCTALINTEGER = 66;
+  /** RegularExpression Id. */
+  int HEXINTEGER = 67;
+  /** RegularExpression Id. */
+  int HEXLETTERS = 68;
+  /** RegularExpression Id. */
+  int DIGIT = 69;
+  /** RegularExpression Id. */
+  int NONZERO = 70;
+  /** RegularExpression Id. */
+  int LETTER = 71;
+  /** RegularExpression Id. */
+  int OCTALS = 72;
+  /** RegularExpression Id. */
+  int ZERO = 73;
 
   /** Lexical state. */
   int DEFAULT = 0;
+  /** Lexical state. */
+  int WithinComment = 1;
 
   /** Literal token values. */
   String[] tokenImage = {
     "<EOF>",
     "<IGNORE>",
-    "<RESERVEDWORDABSTRACT>",
+    "<SINGLELINECOMMENT>",
+    "<NEWLINE>",
+    "\"/*\"",
+    "\"*/\"",
+    "<token of kind 6>",
+    "<STRING>",
+    "<CHAR>",
+    "\"abstract\"",
     "\"default\"",
     "\"goto\"",
     "\"package\"",
@@ -194,8 +217,11 @@ public interface HelloWorldConstants {
     "\"while\"",
     "\"continue\"",
     "\"for\"",
+    "<SPECIALSYMBOL>",
     "<IDENTIFIER>",
-    "<DECIMALINTEGER>",
+    "<INTEGER>",
+    "<REALNUMBER>",
+    "<DECIMALNUMBER>",
     "<OCTALINTEGER>",
     "<HEXINTEGER>",
     "<HEXLETTERS>",
