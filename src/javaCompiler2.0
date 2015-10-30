@@ -166,6 +166,8 @@ TOKEN : {
 
  | <IDENTIFIER : <LETTER> (<LETTER> | <DIGIT> )*>
 { debugStream.println("IDENTIFIER token: " + matchedToken.image); }
+|<INTEGER: <DECIMALINTEGER>|<OCTALINTEGER>|<HEXINTEGER>>
+{debugStream.println("INTEGER token: " + matchedToken.image);}
  | <DECIMALINTEGER : <NONZERO> (<DIGIT> )*>
 { debugStream.println("DECIMAL INTEGER token: " + matchedToken.image); }
  | <OCTALINTEGER : <ZERO>(<OCTALS> )*>

@@ -127,27 +127,29 @@ public interface HelloWorldConstants {
   /** RegularExpression Id. */
   int IDENTIFIER = 62;
   /** RegularExpression Id. */
-  int DECIMALINTEGER = 63;
+  int INTEGER = 63;
   /** RegularExpression Id. */
-  int OCTALINTEGER = 64;
+  int DECIMALINTEGER = 64;
   /** RegularExpression Id. */
-  int HEXINTEGER = 65;
+  int OCTALINTEGER = 65;
   /** RegularExpression Id. */
-  int REALNUMBER = 66;
+  int HEXINTEGER = 66;
   /** RegularExpression Id. */
-  int REAL_NUMBER = 67;
+  int REALNUMBER = 67;
   /** RegularExpression Id. */
-  int HEXLETTERS = 68;
+  int REAL_NUMBER = 68;
   /** RegularExpression Id. */
-  int DIGIT = 69;
+  int HEXLETTERS = 69;
   /** RegularExpression Id. */
-  int NONZERO = 70;
+  int DIGIT = 70;
   /** RegularExpression Id. */
-  int LETTER = 71;
+  int NONZERO = 71;
   /** RegularExpression Id. */
-  int OCTALS = 72;
+  int LETTER = 72;
   /** RegularExpression Id. */
-  int ZERO = 73;
+  int OCTALS = 73;
+  /** RegularExpression Id. */
+  int ZERO = 74;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -219,6 +221,7 @@ public interface HelloWorldConstants {
     "\"for\"",
     "<SPECIALSYMBOL>",
     "<IDENTIFIER>",
+    "<INTEGER>",
     "<DECIMALINTEGER>",
     "<OCTALINTEGER>",
     "<HEXINTEGER>",
